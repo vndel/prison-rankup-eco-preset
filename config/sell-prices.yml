@@ -1,0 +1,54 @@
+# ═══════════════════════════════════════════════════════════════
+#  Sell prices
+#
+#  Prices are set against mine composition, not against vanilla
+#  rarity. A block that is 70% of mine-a must be worth far less per
+#  unit than one that is 5% of mine-z, or the early ladder pays
+#  better than the late one and the whole economy inverts.
+#
+#  Inflation control: there is no multiplier stacking here. Prestige
+#  bonus (8% per level) is the only multiplier, and it is additive,
+#  so a prestige-20 player earns 2.6x, not 4.6x.
+# ═══════════════════════════════════════════════════════════════
+
+currency-symbol: '$'
+
+prices:
+  COBBLESTONE: 1.0
+  STONE: 2.0
+  COAL: 8.0
+  COAL_ORE: 12.0
+  RAW_IRON: 18.0
+  IRON_ORE: 24.0
+  RAW_GOLD: 35.0
+  GOLD_ORE: 48.0
+  REDSTONE: 10.0
+  REDSTONE_ORE: 40.0
+  LAPIS_LAZULI: 22.0
+  LAPIS_ORE: 85.0
+  DIAMOND: 180.0
+  DIAMOND_ORE: 240.0
+  EMERALD: 260.0
+  EMERALD_ORE: 340.0
+  ANCIENT_DEBRIS: 2200.0
+  NETHERITE_SCRAP: 2600.0
+
+  # Block forms pay a small premium over 9 units of the raw item,
+  # which rewards reaching the mines that contain them.
+  IRON_BLOCK: 230.0
+  GOLD_BLOCK: 460.0
+  DIAMOND_BLOCK: 1750.0
+  EMERALD_BLOCK: 2500.0
+  NETHERITE_BLOCK: 24000.0
+
+multipliers:
+  # Rank multiplier is intentionally absent. Mine composition already
+  # scales income; adding a rank multiplier on top compounds and
+  # produces hyperinflation by rank T.
+  prestige-additive: 0.08
+  max-total-multiplier: 10.0
+
+sell-all:
+  enabled: true
+  cooldown-seconds: 3
+  require-permission: 'prison.sellall'
