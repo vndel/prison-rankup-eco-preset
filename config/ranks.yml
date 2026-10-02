@@ -1,0 +1,53 @@
+# ═══════════════════════════════════════════════════════════════
+#  Prison rank ladder — A through Z
+#
+#  Rankup cost follows a geometric curve: each rank costs ~1.55x the
+#  previous one. That matters because mining income also scales with
+#  rank (better mines, better enchants), so a linear cost curve makes
+#  late ranks trivially cheap and the ladder collapses.
+#
+#  Calibration target: ~25-40 minutes of active mining per rank at the
+#  rank's own income level, holding roughly constant across the ladder.
+# ═══════════════════════════════════════════════════════════════
+
+ladder:
+  base-cost: 5000
+  growth-factor: 1.55
+
+ranks:
+  A: { cost: 5000,        mine: mine-a, prefix: '&7[A]' }
+  B: { cost: 7750,        mine: mine-b, prefix: '&7[B]' }
+  C: { cost: 12013,       mine: mine-c, prefix: '&7[C]' }
+  D: { cost: 18620,       mine: mine-d, prefix: '&f[D]' }
+  E: { cost: 28861,       mine: mine-e, prefix: '&f[E]' }
+  F: { cost: 44735,       mine: mine-f, prefix: '&f[F]' }
+  G: { cost: 69339,       mine: mine-g, prefix: '&a[G]' }
+  H: { cost: 107476,      mine: mine-h, prefix: '&a[H]' }
+  I: { cost: 166588,      mine: mine-i, prefix: '&a[I]' }
+  J: { cost: 258211,      mine: mine-j, prefix: '&2[J]' }
+  K: { cost: 400227,      mine: mine-k, prefix: '&2[K]' }
+  L: { cost: 620352,      mine: mine-l, prefix: '&2[L]' }
+  M: { cost: 961546,      mine: mine-m, prefix: '&b[M]' }
+  N: { cost: 1490396,     mine: mine-n, prefix: '&b[N]' }
+  O: { cost: 2310114,     mine: mine-o, prefix: '&b[O]' }
+  P: { cost: 3580677,     mine: mine-p, prefix: '&3[P]' }
+  Q: { cost: 5550049,     mine: mine-q, prefix: '&3[Q]' }
+  R: { cost: 8602576,     mine: mine-r, prefix: '&3[R]' }
+  S: { cost: 13333993,    mine: mine-s, prefix: '&d[S]' }
+  T: { cost: 20667689,    mine: mine-t, prefix: '&d[T]' }
+  U: { cost: 32034918,    mine: mine-u, prefix: '&d[U]' }
+  V: { cost: 49654123,    mine: mine-v, prefix: '&5[V]' }
+  W: { cost: 76963891,    mine: mine-w, prefix: '&5[W]' }
+  X: { cost: 119294031,   mine: mine-x, prefix: '&5[X]' }
+  Y: { cost: 184905748,   mine: mine-y, prefix: '&6[Y]' }
+  Z: { cost: 286603909,   mine: mine-z, prefix: '&6&l[Z]' }
+
+prestige:
+  enabled: true
+  # Prestige resets the ladder but keeps a multiplier, so the cost
+  # curve restarts rather than growing without bound.
+  cost-multiplier: 2.5
+  sell-bonus-per-prestige: 0.08
+  max-prestige: 100
+  reset-balance: true
+  keep-enchants: true
