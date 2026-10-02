@@ -1,0 +1,76 @@
+# ═══════════════════════════════════════════════════════════════
+#  LuckPerms track layout for the prison ladder
+#
+#  Ranks inherit linearly: B inherits A, C inherits B, and so on.
+#  That means a permission granted at rank A need not be repeated
+#  26 times, and removing it from A removes it everywhere above.
+# ═══════════════════════════════════════════════════════════════
+
+tracks:
+  prison-ranks:
+    groups:
+      - rank-a
+      - rank-b
+      - rank-c
+      - rank-d
+      - rank-e
+      - rank-f
+      - rank-g
+      - rank-h
+      - rank-i
+      - rank-j
+      - rank-k
+      - rank-l
+      - rank-m
+      - rank-n
+      - rank-o
+      - rank-p
+      - rank-q
+      - rank-r
+      - rank-s
+      - rank-t
+      - rank-u
+      - rank-v
+      - rank-w
+      - rank-x
+      - rank-y
+      - rank-z
+
+groups:
+  rank-a:
+    weight: 10
+    permissions:
+      - 'prison.mine.a'
+      - 'prison.sellall'
+      - 'essentials.warp.list'
+    parent: default
+
+  rank-f:
+    weight: 60
+    permissions:
+      - 'prison.mine.f'
+      - 'essentials.kit.miner'
+    parent: rank-e
+
+  rank-m:
+    weight: 130
+    permissions:
+      - 'prison.mine.m'
+      - 'prison.autosell'
+      - 'essentials.fly.safelogin'
+    parent: rank-l
+
+  rank-t:
+    weight: 200
+    permissions:
+      - 'prison.mine.t'
+      - 'prison.multiplier.tier2'
+    parent: rank-s
+
+  rank-z:
+    weight: 260
+    permissions:
+      - 'prison.mine.z'
+      - 'prison.prestige'
+      - 'prison.multiplier.tier3'
+    parent: rank-y
